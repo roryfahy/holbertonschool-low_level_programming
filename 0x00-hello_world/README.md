@@ -1,0 +1,1 @@
+this is the readme for the project 0x00-hello_world.  It is the first project we have done learning the C programming language!
