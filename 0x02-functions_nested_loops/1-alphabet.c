@@ -1,8 +1,8 @@
 #include "holberton.h"
 /**
- * main - lsdahfgalkd
+ * print_alphabet - prints a string of alphabet
  *
- * Return: asdhlfk
+ * Return: string of letters a to z
  */
 void print_alphabet(void)
 {
