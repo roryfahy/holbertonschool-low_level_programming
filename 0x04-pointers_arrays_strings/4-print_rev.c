@@ -1,16 +1,23 @@
 #include "holberton.h"
 /**
- * _puts - prints a string followed by a newline
- * @str: pointer to char
+ * print_rev - prints a string in reverse followed by a newline
+ * @s: pointer to char
  *
  * Return: void
  */
-void _puts(char *str)
+void print_rev(char *s)
 {
-	while (*str)
+	int n = 0;
+
+	while (*s)
 	{
-		_putchar(*str);
-		str++;
+		s++;
+		n++;
+	}
+	for (; n >= 0; n--)
+	{
+		_putchar(*s);
+		s--;
 	}
 	_putchar('\n');
 }
