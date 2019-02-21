@@ -8,7 +8,7 @@
 void puts_half(char *str)
 {
 	char *cptr = str;
-	int k; /*length of string*/
+	int k = 0; /*length of string*/
 	int n;
 
 	while (*cptr)
@@ -17,8 +17,7 @@ void puts_half(char *str)
 		k++;
 	}
 	n = k / 2;
-	for (; n > 0; n--)
-		cptr--;
+	cptr -= n;
 	while (*cptr)
 	{
 		_putchar(*cptr);
