@@ -1,20 +1,28 @@
 #include "holberton.h"
 /**
- * puts2 - prints one char out of 2 of a string
+ * puts_half - prints half the string followed by new line
  * @str: pointer to char
  *
  * Return: void
  */
-void puts2(char *str)
+void puts_half(char *str)
 {
-	while (*str)
-	{
-		int fuckaduck;
+	char *cptr = str;
+	int k; /*length of string*/
+	int n;
 
-		fuckaduck++;
-		if (fuckaduck % 2 == 1)
-			_putchar(*str);
-		str++;
+	while (*cptr)
+	{
+		cptr++;
+		k++;
+	}
+	n = k / 2;
+	for (; n > 0; n--)
+		cptr--;
+	while (*cptr)
+	{
+		_putchar(*cptr);
+		cptr++;
 	}
 	_putchar('\n');
 }
