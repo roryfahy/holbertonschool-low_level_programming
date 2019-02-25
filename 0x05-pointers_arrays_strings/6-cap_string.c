@@ -8,7 +8,7 @@
 char *cap_string(char *zard)
 {
 	char *pika = zard;
-	char n[] = " \n\t,;.!?\"(){}";
+	char n[] = "\n\t, ;.!?\"(){}";
 	char *sep;
 
 	if (*pika >= 'a' && *pika <= 'z')
@@ -18,8 +18,7 @@ char *cap_string(char *zard)
 		for (sep = n; *sep; sep++)
 			if (*pika == *sep && *(pika + 1) <= 'z' && *(pika + 1) >= 'a')
 			{
-				*(pika + 1) = (*pika + 1) - 32;
-				break;
+				*(pika + 1) = *(pika + 1) - 32;
 			}
 	}
 	return (zard);
