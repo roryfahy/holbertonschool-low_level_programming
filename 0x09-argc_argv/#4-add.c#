@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "holberton.h"
 /**
- * main - multiplies two numbers supplied on the command line as args
+ * main - adds positive numbers passed in on the command line
  * @argc: int
  * @argv: pointer to array of strings
  *
@@ -10,9 +10,7 @@
  */
 int main(int argc, char *argv[])
 {
-	if (argc < 3)
-	{
-		printf("Error\n");
+	if (atoi(argv[i] 
 		return (1);
 	}
 	printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
