@@ -1,20 +1,33 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "holberton.h"
+#include <ctype.h>
 /**
- * main - multiplies two numbers supplied on the command line as args
- * @argc: int
- * @argv: pointer to array of strings
+ * main - sums args in array
+ * @argc: integer num of args
+ * @argv: array of pointers to arguments
  *
- * Return: zero if success
+ * Return: zero if correct
  */
 int main(int argc, char *argv[])
 {
-	if (argc < 3)
+	int sum = 0;
+	char *rep;
+
+	while (--argc > 0)
 	{
-		printf("Error\n");
-		return (1);
+		rep = argv[argc];
+		while (*rep)
+		{
+			if (!isdigit(*rep))
+			{
+				printf("Error\n");
+				return (1);
+			}
+			rep++;
+		}
+		sum += atoi(argv[argc]);
 	}
-	printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
+	printf("%d\n", sum);
+
 	return (0);
 }
