@@ -14,6 +14,8 @@ char *_strdup(char *str)
 	int count = 0;
 	int i = 0;
 
+	if (str == NULL)
+		return (NULL);
 	cpy = str;
 	for (; *cpy; cpy++, count++)
 		;
