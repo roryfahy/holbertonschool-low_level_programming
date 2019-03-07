@@ -16,6 +16,8 @@ char *argstostr(int ac, char **av)
 	int tot_len = 0;
 	char *newArr;
 
+	if (ac == 0 || av == NULL)
+		return (NULL);
 	for (; i < ac; i++)
 		for (j = 0; av[i][j]; j++)
 			tot_len++;
