@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include "dog.h"
+
+/**
+ * new_dog - create a new dog
+ * @name: dog name
+ * @age: dog age
+ * @owner: dog owner
+ *
+ * Return: pointer to a dog_t
+ */
+dog_t *new_dog(char *name, float age, char *owner)
+{
+	int k = 0; i = 0, j = 0;
+	dog_t *ptr, bear;
+
+	for (; name[i]; i++)
+		;
+	i++;
+	for (; owner[j]; j++)
+		;
+	j++;
+	ptr = malloc(sizeof *ptr);
+	if (ptr == NULL)
+		return (NULL);
+	s1 = malloc(i);
+	if (s1 == NULL)
+		return (NULL);
+	s2 = malloc(j);
+	if (s2 == NULL)
+		return (NULL);
+	for (; k < sizeof dog_t; k++)
+ptr[k] = 
+
+}
