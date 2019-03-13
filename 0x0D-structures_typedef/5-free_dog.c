@@ -1,3 +1,5 @@
+#include <stdlib.h>
+#include "dog.h"
 /**
  * free_dog - lets the dogs out
  * @d: pointer to a dog_t type
