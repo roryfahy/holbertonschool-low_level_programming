@@ -1,7 +1,9 @@
+#include <stdio.h>
+#include "function_pointers.h"
 /**
- * print-name - print a name
- * @name - pointer to name
- * @f - pointer to a function that takes a pointer to a char and
+ * print_name - print a name
+ * @name: - pointer to name
+ * @f: - pointer to a function that takes a pointer to a char and
  * returns nothing
  *
  * Return: nothing
