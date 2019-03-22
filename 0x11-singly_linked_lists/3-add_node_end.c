@@ -15,10 +15,14 @@ list_t *add_node_end(list_t **head, const char *str)
 	list_t *NewEle, *temp;
 
 	if ((*head) == NULL)
+	{
 		*head = NewEle = malloc(sizeof(list_t));
+		if (NewEle == NULL)
+			return (NULL);
+	}
 	else
 	{
-		NewEle = malloc(sizeof(*temp));
+		NewEle = malloc(sizeof(list_t));
 		if (NewEle == NULL)
 			return (NULL);
 		temp = *head;
