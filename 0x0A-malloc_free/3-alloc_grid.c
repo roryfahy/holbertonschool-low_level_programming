@@ -24,7 +24,7 @@ int **alloc_grid(int width, int height)
 		if (ptoarr[i] == NULL)
 		{
 			for (; i > 0; i--)
-				free(ptoarr[i-1]);
+				free(ptoarr[i - 1]);
 			free(ptoarr);
 			return (NULL);
 		}
