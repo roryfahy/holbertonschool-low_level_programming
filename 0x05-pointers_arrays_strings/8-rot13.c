@@ -13,8 +13,6 @@ char *rot13(char *ptr)
 	char rot[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
 	i = j = 0;
-	if (!ptr)
-		return (NULL);
 	for (; ptr[i]; i++)
 		for (j = 0; reg[j]; j++)
 			if (ptr[i] == reg[j])
