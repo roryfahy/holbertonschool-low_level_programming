@@ -11,8 +11,8 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	unsigned int flip = 0;
 	int i = 0;
 
-	for (; i < 32; i++)
-		if ((n & (1 << i)) != (m & (1 << i)))
+	for (; i < 64; i++)
+		if ((n & (1UL << i)) != (m & (1UL << i)))
 			flip++;
 	return (flip);
 }

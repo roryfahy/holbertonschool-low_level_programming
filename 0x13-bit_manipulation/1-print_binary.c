@@ -1,20 +1,5 @@
 #include <stdio.h>
 #include "holberton.h"
-
-/**
- * _strlen - return len of str
- * @str: sting to count
- *
- * Return: length of string
- */
-int _strlen(const char *str)
-{
-	int count = 0;
-
-	for (; str && *str; str++, count++)
-		;
-	return (count);
-}
 /**
  * print_binary - print a number in binary
  * @n: unsigned long int (8bytes) to print
@@ -23,7 +8,7 @@ int _strlen(const char *str)
  */
 void print_binary(unsigned long int n)
 {
-	unsigned long int mask = 1 << 31;
+	unsigned long int mask = 1UL >> 63;
 	int first = 0;
 
 	if (n == 0)
