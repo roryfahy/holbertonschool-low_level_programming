@@ -15,7 +15,6 @@ void print_binary(unsigned long int n)
 	for (; mask; mask >>= 1)
 		if (mask & n)
 			break;
-	printf("\n %lu mask\n", mask);
 	for (; mask; mask >>= 1)
 	{
 		if (n & mask)
