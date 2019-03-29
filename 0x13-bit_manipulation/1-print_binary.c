@@ -8,21 +8,19 @@
  */
 void print_binary(unsigned long int n)
 {
-	unsigned long int mask = 1UL >> 63;
-	int first = 0;
+	unsigned long int mask = 1UL << 63;
 
 	if (n == 0)
 		_putchar('0');
-	for (; mask > 0; mask >>= 1)
+	for (; mask; mask >>= 1)
+		if (mask & n)
+			break;
+	printf("\n %lu mask\n", mask);
+	for (; mask; mask >>= 1)
 	{
 		if (n & mask)
-		{
 			_putchar('1');
-			first = 1;
-		}
-		else if (!(n & mask) && first)
-			_putchar('0');
 		else
-			continue;
+			_putchar('0');
 	}
 }
