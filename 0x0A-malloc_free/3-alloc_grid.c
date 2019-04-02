@@ -11,20 +11,25 @@
 int **alloc_grid(int width, int height)
 {
 	int **ptoarr;
-	int *line;
-	int i = 0;
+	int i = 0, j = 0;
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
 	ptoarr = malloc(sizeof(int *) * height);
 	if (ptoarr == NULL)
 		return (NULL);
-	line = malloc(height * width * sizeof(int));
-	if (line == NULL)
-		return (NULL);
-	for (; i < height; i++)
-		ptoarr[i] = line + i * width;
-	for (i = 0; i < height * width; i++)
-		line[i] = 0;
+	for (i = 0; height > 0; height--, i++)
+	{
+		ptoarr[i] = malloc(width * sizeof(int));
+		if (ptoarr[i] == NULL)
+		{
+			for (; i > 0; i--)
+				free(ptoarr[i - 1]);
+			free(ptoarr);
+			return (NULL);
+		}
+		for (j = 0; j < width; j++)
+			ptoarr[i][j] = 0;
+	}
 	return (ptoarr);
 }
