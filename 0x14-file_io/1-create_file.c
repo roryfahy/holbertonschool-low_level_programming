@@ -44,7 +44,7 @@ ssize_t safe_write(int fd, char *buff, size_t buff_size)
 	ssize_t prev_bytes;
 	size_t total_written = 0;
 
-	if (buff == NULL || fd < 0 || buff_size < 1)
+	if (buff == NULL || fd < 0 || buff_size < 0)
 		return (-1);
 	do {
 		prev_bytes = write(fd, buff + total_written, buff_size - total_written);
