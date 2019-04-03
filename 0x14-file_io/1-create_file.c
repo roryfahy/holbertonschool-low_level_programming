@@ -26,7 +26,7 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 	for (; text_content[len]; len++)
 		;
-	bytes_written = safe_write(fd, text_content, ++len);
+	bytes_written = safe_write(fd, text_content, len);
 	close(fd);
 		if (bytes_written == -1)
 			return (-1);
