@@ -27,9 +27,10 @@ int create_file(const char *filename, char *text_content)
 	for (; text_content[len]; len++)
 		;
 	bytes_written = safe_write(fd, text_content, ++len);
-	if (bytes_written == -1)
-		return (-1);
-	return (1);
+	close(fd);
+		if (bytes_written == -1)
+			return (-1);
+		return (1);
 }
 /**
  * safe_write - helper function to loop a write and handle errors
@@ -52,4 +53,4 @@ ssize_t safe_write(int fd, char *buff, size_t buff_size)
 	if (prev_bytes == -1)
 		return (-1);
 	return (total_written);
-	}
+}
