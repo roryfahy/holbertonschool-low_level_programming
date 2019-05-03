@@ -2,32 +2,48 @@
 #include <stdio.h>
 #include "variadic_functions.h"
 /**
- * print_strings - print strings followed by a new line
- * @separator: pointer to a constant char
- * @n: number of args passed to print_numbers
+ * print_all - print any argument that is passed in the type it is
+ * @format: constant pointer to a constant char
  *
  * Return: nothing
  */
-void print_strings(const char *separator, const unsigned int n, ...)
+void print_all(const char * const format, ...)
 {
-	unsigned int i;
-	va_list stringies;
-	char *ptr;
+	char *str;
+	const char *rep = format;
+	va_list input_args;
 
-	if (separator == NULL)
-		separator = "";
-	va_start(stringies, n);
-	for (i = 0; i < n; i++)
+	va_start(input_args, format);
+	while (format && *rep)
 	{
-		ptr = va_arg(stringies, char *);
-		if (ptr == NULL)
-			printf("(nil)");
-		else
-			printf("%s", ptr);
-		if (i < n - 1)
-			printf("%s", separator);
-		else
-			printf("\n");
-			va_end(stringies);
+		switch (*rep)
+		{
+		case 'c':
+			printf("%c", va_arg(input_args, int));
+			break;
+		case 'i':
+			printf("%d", va_arg(input_args, int));
+			break;
+		case 'f':
+			printf("%f", va_arg(input_args, double));
+			break;
+		case 's':
+			str = va_arg(input_args, char *);
+			if (str == NULL)
+			{
+				printf("(nil)");
+				break;
+			}
+			printf("%s", str);
+			break;
+		default:
+			rep++;
+			continue;
+		}
+		if (*(rep + 1))
+			printf(", ");
+		rep++;
 	}
+		va_end(input_args);
+		printf("\n");
 }

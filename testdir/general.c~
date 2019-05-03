@@ -1,0 +1,3 @@
+#include "shell.h"
+
+char *_strcpy(char *dest, const char *src)
