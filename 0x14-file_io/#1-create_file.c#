@@ -21,7 +21,7 @@ int append_text_to_file(const char *filename, char *text_content)
 		return (-1);
 	if (text_content == NULL)
 		text_content = "";
-	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
+	fd = open(filename, O_WRONLY | O_APPEND);
 	if (fd == -1)
 		return (-1);
 	for (; text_content[len]; len++)
@@ -44,7 +44,7 @@ ssize_t safe_write(int fd, char *buff, size_t buff_size)
 	ssize_t prev_bytes;
 	size_t total_written = 0;
 
-	if (buff == NULL || fd < 0)
+	if (buff == NULL || fd < 0 || buff_size == 0)
 		return (-1);
 	do {
 		prev_bytes = write(fd, buff + total_written, buff_size - total_written);

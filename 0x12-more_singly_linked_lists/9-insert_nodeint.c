@@ -42,7 +42,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		node->next = pre_node;
 		return (node);
 	}
-	for (; idx > 1 && pre_node; idx--)
+	 for (; idx > 1 && pre_node; idx--)
 		pre_node = pre_node->next;
 	if (idx > 1)
 	{
