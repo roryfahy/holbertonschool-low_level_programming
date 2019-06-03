@@ -16,7 +16,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (node_ptr == NULL)
 		return (0);
 	node_ptr->key = strdup(key);
-	if (node_ptr->key == NULL)
+	if (node_ptr->key == NULL || node_ptr->key == "")
 	{
 		free(node_ptr);
 		return (0);
