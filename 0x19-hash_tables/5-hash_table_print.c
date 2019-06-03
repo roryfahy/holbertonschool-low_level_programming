@@ -29,13 +29,13 @@ void hash_table_print(const hash_table_t *ht)
 			if (ht->array[i] != NULL)
 			{
 				node = ht->array[i];
-				printf("node is: %p", (void *) node);
+				printf("\nnode is: %p\n", (void *) node);
 				for (; node != NULL; node = node->next) /* what if key or value are null? */
 				{
 					printf("'%s': '%s'", node->key, node->value);
-					printf("node is: %p", (void *) node);
+					printf("\nnode is: %p\n", (void *) node);
 				}
-				printf("node is: %p", (void *) node);
+				printf("\nnode is: %p\n", (void *) node);
 				if (node != last_key)
 					printf(", ");
 			}
