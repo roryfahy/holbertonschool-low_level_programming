@@ -18,16 +18,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (node_ptr == NULL)
 		return (0);
 	node_ptr->key = strdup(key);
-	if (node_ptr->key == NULL)
-	{
-		free(node_ptr);
-		return (0);
-	}
 	node_ptr->value = strdup(value);
-	if (node_ptr->value == NULL)
+	if (node_ptr->value == NULL || node_ptr->key == NULL)
 	{
-		free(node_ptr->key);
-		free(node_ptr);
+		free(node_ptr->key), free(node_ptr->value), free(node_ptr);
 		return (0);
 	}
 	index = key_index((unsigned char *) key, ht->size);
@@ -40,7 +34,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	for (; tmp_node != NULL; tmp_node = tmp_node->next)
 		if (strcmp(key, tmp_node->key) == 0)
 		{
-			free(tmp_node->value);
+			free(tmp_node->value), free(node_ptr->key);
+			free(node_ptr->value), free(node_ptr);
 			tmp_node->value = strdup(value);
 			if (tmp_node->value == NULL)
 				return (0);
