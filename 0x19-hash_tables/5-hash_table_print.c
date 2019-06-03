@@ -19,8 +19,7 @@ void hash_table_print(const hash_table_t *ht)
 			{
 				last_key = ht->array[i];
 				for (; last_key->next != NULL; last_key = last_key->next)
-					printf("last_key is: %p\n", (void *) last_key);
-				printf("last_key is: %p\n", (void *) last_key);
+					;
 			}
 		}
 		putchar('{');
@@ -29,13 +28,9 @@ void hash_table_print(const hash_table_t *ht)
 			if (ht->array[i] != NULL)
 			{
 				node = ht->array[i];
-				printf("\nnode is: %p\n", (void *) node);
-				for (; node != NULL; node = node->next) /* what if key or value are null? */
-				{
+				for (; node->next != NULL; node = node->next) /* what if key or value are null? */
 					printf("'%s': '%s'", node->key, node->value);
-					printf("\nnode is: %p\n", (void *) node);
-				}
-				printf("\nnode is: %p\n", (void *) node);
+				printf("'%s': '%s'", node->key, node->value);
 				if (node != last_key)
 					printf(", ");
 			}
