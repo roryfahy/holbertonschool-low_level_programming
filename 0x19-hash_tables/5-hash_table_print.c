@@ -7,28 +7,39 @@
  */
 void hash_table_print(const hash_table_t *ht)
 {
-	unsigned int z, i, k, j;
-	hash_node_t *node;
-	/* char *keys[ht->size], *values[ht->size]; */
+	unsigned int i;
+	hash_node_t *last_key, *node;
 
-	/* for (z = 0; z < ht->size; z++); */
-	/* { */
-	/* } */
-	j = k = 0;
-	if (ht != NULL)
+	last_key = node = NULL;
+	if (ht != NULL) /* what if ht->array == NULL? */
 	{
-		for (i = 0; i < ht->size; i++, j++)
+		for (i = 0; i < ht->size; i++)
 		{
-			node = ht->array[i];
-			for (; node != NULL; j++, node = node->next)
+			if (ht->array[i] != NULL)
+			{
+				last_key = ht->array[i];
+				for (; last_key->next != NULL; last_key = last_key->next)
+					printf("last_key is: %p\n", (void *) last_key);
+				printf("last_key is: %p\n", (void *) last_key);
+			}
 		}
 		putchar('{');
-		for (; k < j; k++)
+		for (i = 0; i < ht->size; i++)
 		{
-			printf("%s: %s", );
-			if (k < j - 1)
-				printf(', ');
+			if (ht->array[i] != NULL)
+			{
+				node = ht->array[i];
+				printf("node is: %p", (void *) node);
+				for (; node != NULL; node = node->next) /* what if key or value are null? */
+				{
+					printf("'%s': '%s'", node->key, node->value);
+					printf("node is: %p", (void *) node);
+				}
+				printf("node is: %p", (void *) node);
+				if (node != last_key)
+					printf(", ");
+			}
 		}
-		printf('}\n');
+		printf("}\n");
 	}
 }
