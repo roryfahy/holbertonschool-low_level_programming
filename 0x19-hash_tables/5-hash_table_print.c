@@ -11,7 +11,7 @@ void hash_table_print(const hash_table_t *ht)
 	hash_node_t *last_key, *node;
 
 	last_key = node = NULL;
-	if (ht != NULL) /* what if ht->array == NULL? */
+	if (ht != NULL && ht->array != NULL)
 	{
 		for (i = 0; i < ht->size; i++)
 		{
@@ -28,7 +28,7 @@ void hash_table_print(const hash_table_t *ht)
 			if (ht->array[i] != NULL)
 			{
 				node = ht->array[i];
-				for (; node->next != NULL; node = node->next) /* what if key or value are null? */
+				for (; node->next != NULL; node = node->next)
 					printf("'%s': '%s'", node->key, node->value);
 				printf("'%s': '%s'", node->key, node->value);
 				if (node != last_key)
