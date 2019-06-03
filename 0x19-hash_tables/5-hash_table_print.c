@@ -29,7 +29,11 @@ void hash_table_print(const hash_table_t *ht)
 			{
 				node = ht->array[i];
 				for (; node->next != NULL; node = node->next)
+				{
 					printf("'%s': '%s'", node->key, node->value);
+					if (node != last_key)
+						printf(", ");
+				}
 				printf("'%s': '%s'", node->key, node->value);
 				if (node != last_key)
 					printf(", ");
