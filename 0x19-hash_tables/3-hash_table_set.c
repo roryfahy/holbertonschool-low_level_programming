@@ -12,11 +12,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int index;
 	hash_node_t *node_ptr, *tmp_node = NULL;
 
+	if (key == NULL || value == NULL || *key == '\0')
+		return (0);
 	node_ptr = calloc(1, sizeof(hash_node_t));
 	if (node_ptr == NULL)
 		return (0);
 	node_ptr->key = strdup(key);
-	if (node_ptr->key == NULL || node_ptr->key[0] == '\0')
+	if (node_ptr->key == NULL)
 	{
 		free(node_ptr);
 		return (0);
