@@ -28,7 +28,7 @@ void do_quick_sort(int *array, size_t size, size_t start, size_t stop)
 			new_pivot_idx++;
 		}
 	}
-	if (new_pivot_idx != stop)
+	if (new_pivot_idx != stop && pivot != array[new_pivot_idx])
 	{
 		swap = array[new_pivot_idx];
 		array[new_pivot_idx] = array[stop];
