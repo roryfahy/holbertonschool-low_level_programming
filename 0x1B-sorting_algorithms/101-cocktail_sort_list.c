@@ -6,7 +6,7 @@
  * swap_nodes - swap two adjacent nodes in a dll
  * @left: left most node to swap
  * @right: right most node to swap
- * Return: void
+ * @list: double pointer to a dll
  */
 void swap_nodes(listint_t *left, listint_t *right, listint_t **list)
 {
@@ -25,14 +25,13 @@ void swap_nodes(listint_t *left, listint_t *right, listint_t **list)
 /**
  * cocktail_sort_list - use cocktail shaker sort to sort a dll
  * @list: pointer to a pointer to a dll
- * Return: void
  */
 void cocktail_sort_list(listint_t **list)
 {
 	listint_t *node;
 	int num_swaps;
 
-	if (list == NULL || *list ==NULL)
+	if (list == NULL || *list == NULL)
 		return;
 	node = *list;
 	do {
@@ -41,7 +40,7 @@ void cocktail_sort_list(listint_t **list)
 		{
 			if (node->n > node->next->n)
 			{
-				swap_nodes(node, node->next, list); 
+				swap_nodes(node, node->next, list);
 				node = node->prev;
 				print_list(*list);
 				num_swaps++;
@@ -51,7 +50,7 @@ void cocktail_sort_list(listint_t **list)
 		{
 			if (node->n < node->prev->n)
 			{
-				swap_nodes(node->prev, node, list); 
+				swap_nodes(node->prev, node, list);
 				node = node->next;
 				print_list(*list);
 				num_swaps++;

@@ -3,8 +3,9 @@
 #include <stdio.h>
 
 /**
- * shell_sort -
- *
+ * shell_sort - sort an array of ints via shellsort
+ * @array: array of ints to sort
+ * @size: size of array
  */
 void shell_sort(int *array, size_t size)
 {
