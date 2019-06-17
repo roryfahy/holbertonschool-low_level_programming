@@ -39,4 +39,5 @@ void radix_sort(int *array, size_t size)
 		pow10 *= 10;
 		print_array(array, size);
 	} while (total != 0 && pow10 <= 1000000000);
+	free(copy);
 }
