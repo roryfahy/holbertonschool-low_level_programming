@@ -20,19 +20,19 @@ void do_merge_sort(int *array, int *copy, st size, st iStart, st iEnd)
 	do_merge_sort(array, copy, size, middle + 1, iEnd);
 	iLeft = iStart;
 	iRight = middle + 1;
-	printf("Merging...\n");
+	puts("Merging...\n");
 	printf("[left]: ");
 	print_array(copy + iStart, middle - iStart + 1);
 	printf("[right]: ");
 	print_array(copy + middle + 1, iEnd - middle);
 	while (iLeft <= middle || iRight <= iEnd)
 	{
-		if (iRight > iEnd || (copy[iLeft] < copy[iRight] && iLeft <= middle))
+		if (iRight > iEnd || (iLeft <= middle && copy[iLeft] <= copy[iRight]))
 		{
 			array[iLeft + iRight - middle - 1] = copy[iLeft];
 			iLeft++;
 		}
-		if (iLeft > middle || (copy[iRight] < copy[iLeft] && iRight <= iEnd))
+		else if (iLeft > middle || (iRight <= iEnd && copy[iRight] < copy[iLeft]))
 		{
 			array[iLeft + iRight - middle - 1] = copy[iRight];
 			iRight++;
