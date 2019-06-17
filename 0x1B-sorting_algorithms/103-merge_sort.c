@@ -20,7 +20,7 @@ void do_merge_sort(int *array, int *copy, st size, st iStart, st iEnd)
 	do_merge_sort(array, copy, size, middle + 1, iEnd);
 	iLeft = iStart;
 	iRight = middle + 1;
-	puts("Merging...\n");
+	puts("Merging...");
 	printf("[left]: ");
 	print_array(copy + iStart, middle - iStart + 1);
 	printf("[right]: ");
