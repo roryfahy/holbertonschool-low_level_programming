@@ -54,6 +54,8 @@ void merge_sort(int *array, st size)
 	int *copy;
 	st i;
 
+	if (array == NULL || size < 2)
+		return;
 	copy = malloc(size * sizeof(int));
 	if (copy == NULL)
 		return;

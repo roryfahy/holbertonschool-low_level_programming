@@ -20,6 +20,8 @@ void shell_sort(int *array, size_t size)
 		25015772549499852, 75047317648499552, 225141952945498688,
 		675425858836496000, 2026277576509488128};
 
+	if (array == NULL || size < 2)
+		return;
 	for (gap_index = 0; gaps[gap_index] < size / 3; gap_index++)
 		;
 	while (gap_index != SIZE_MAX)
