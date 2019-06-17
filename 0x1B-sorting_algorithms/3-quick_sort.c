@@ -48,5 +48,7 @@ void do_quick_sort(int *array, size_t size, size_t start, size_t stop)
  */
 void quick_sort(int *array, size_t size)
 {
+	if (array == NULL || size < 2)
+		return;
 	do_quick_sort(array, size, 0, size - 1);
 }
