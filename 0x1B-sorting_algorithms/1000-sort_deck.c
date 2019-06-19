@@ -3,9 +3,8 @@
 #define NULL ((void *)0)
 
 /**
- * sort_deck -
- *
- * Return: 
+ * sort_deck - sort a deck of cards
+ * @deck: dptr to a dll representing a deck of cards
  */
 void sort_deck(deck_node_t **deck)
 {

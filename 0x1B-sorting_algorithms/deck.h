@@ -1,9 +1,19 @@
+#ifndef _DECK_H_
+#define _DECK_H_
+
+/**
+ * enum kind_e - suits
+ * @SPADE: spade suit
+ * @HEART: heart suit
+ * @CLUB: CLUB suit
+ * @DIAMOND: DIAMOND SUIT
+ */
 typedef enum kind_e
 {
 	SPADE = 0,
 	HEART,
 	CLUB,
-    DIAMOND
+	DIAMOND
 } kind_t;
 
 /**
@@ -36,3 +46,5 @@ typedef struct deck_node_s
 unsigned char cast_card(card_t);
 void insertion_sort_list(deck_node_t **deck);
 void sort_deck(deck_node_t **deck);
+
+#endif /* _DECK_H_ */
