@@ -11,28 +11,36 @@
  */
 int binary_search(int *array, size_t size, int value)
 {
-	int len, idx = 0;
-	
+	int idx, iCheck, iStop = (int) size - 1;
+	int iStart = 0;
+
 	if (array == NULL)
 		return (-1);
-	len = (size_t) size;
 
+	iCheck = iStop / 2;
 	while (1)
 	{
 		printf("Searching in array: ");
-		for (; idx < len; idx++)
+		for (idx = iStart; idx <= iStop; idx++)
 		{
 			printf("%d", array[idx]);
-			if (idx != size - 1)
+			if (idx != iStop)
 				printf(", ");
+			else
+				printf("\n");
 		}
-		if (array[idx] < value)
-			
-		if (array[idx] > value)
-			look in left array;
-		if (array[idx] == value)
-			return (idx);
-		if (len <= 1)
+		if (array[iCheck] == value)
+			return (iCheck);
+		if (iStop <= iStart)
 			return (-1);
+		if (array[iCheck] < value)
+		{
+			iStart = iCheck + 1;
+		}
+		if (array[iCheck] > value)
+		{
+			iStop = iCheck - 1;
+		}
+		iCheck = iStop - iStart / 2 + iStart;
 	}
 }
