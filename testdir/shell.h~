@@ -1,8 +1,0 @@
-#ifndef _shell_
-#define _shell_
-
-char **create_argv(char *str, ssize_t size);
-char *_strcpy(char *dest, const char *src);
-
-
-#endif
