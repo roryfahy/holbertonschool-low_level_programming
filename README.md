@@ -1,1 +1,2 @@
-this is a repository that contains all of the code and content from all of the low level programming assignments assigned to rory fahy while attending holberton school in new haven.
+## Description
+This repository contains all of the solutions to projects I completed at Holberton in the low-level programming portion of the foundations curriculum.
