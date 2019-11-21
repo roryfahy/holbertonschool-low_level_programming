@@ -33,3 +33,9 @@ Directories | Description
 [0x1C-makefiles](./0x1C-makefiles) | Learning about make files
 [0x1D-binary_trees](./0x1D-binary_trees) | Introduction to binary trees in C
 [0x1E-search_algorithms](./0x1E-search_algorithms) | Implementation of most popular search algorithms
+
+If you have any questions, please don't hesitate to reach out! I swear I don't byte: | 
+[LinkedIn](https://www.linkedin.com/in/rory-fahy-65743885/) |
+ [Twitter](https://twitter.com/Rory_Chillmore) |
+ [AmbientDJ landing page](https://kylelitscher.wixsite.com/ambientdj)
+
